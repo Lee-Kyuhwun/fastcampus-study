@@ -1,0 +1,13 @@
+
+P
+java:S1118":Add a private constructor to hide the implicit public one.(Ö‘À§
+Q	java:S125"<This block of commented-out lines of code should be removed.(À∆òß
+P
+java:S1128"5Remove this unused import 'org.passay.CharacterData'.(ÿŸ¥»˙ˇˇˇˇ
+J
+java:S1128"5Remove this unused import 'org.passay.CharacterRule'.(ﬂî∆d
+Q
+java:S1128"<Remove this unused import 'org.passay.EnglishCharacterData'.(˜ÀÅ
+
+O
+java:S1128"9Remove this unused import 'org.passay.PasswordGenerator'.(ôÒ›Û
