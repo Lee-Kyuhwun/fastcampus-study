@@ -25,6 +25,6 @@ public class AccountApiController{
             LoginRequest   loginRequest,
             HttpSession httpSession
     ){
-
+        userService.login(loginRequest, httpSession);
     }
 }

@@ -11,10 +11,10 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class) // JSON
 public class LoginRequest {
 
-        private String name;
+        private String id;
 
         private String password;
 }
