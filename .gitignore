@@ -6,7 +6,8 @@ build/
 !**/src/test/**/build/
 
 gradle/**/wrapper/gradle-wrapper.jar
-
+gradle/**
+**/gradle/**
 
 ### STS ###
 .apt_generated
