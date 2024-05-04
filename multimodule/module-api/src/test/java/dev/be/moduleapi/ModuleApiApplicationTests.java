@@ -1,10 +1,10 @@
-package dev.be.multimodule;
+package dev.be.moduleapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MultimoduleApplicationTests {
+class ModuleApiApplicationTests {
 
     @Test
     void contextLoads() {
