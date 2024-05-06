@@ -18,13 +18,13 @@ public class AccountApiController{
     private final UserService userService;
 
     @PostMapping("/login")
-    public void login(
+    public String login(
             @RequestBody
             LoginRequest loginRequest,
             HttpServletResponse httpServletResponse // HttpServletResponse은 응답을 할 때 사용하는 객체
-
+            , HttpSession httpSession
     ){
-        userService.login(loginRequest, httpServletResponse);
+       return userService.login(loginRequest, httpServletResponse);
     }
 
 
