@@ -1,0 +1,14 @@
+#logback.classic pattern: [REQUEST2] [%-5level] %d{yyyy-MM-dd HH:mm:ss} [%thread] [%logger{0}:%line] - %msg%n
+[REQUEST2] [INFO ] 2024-05-12 19:57:25 [main] [LogbackApplication:50] - Starting LogbackApplication using Java 17.0.9 with PID 24988 (C:\project\fastcampus-study\logback\build\classes\java\main started by dlrbg in C:\project\fastcampus-study\logback)
+[REQUEST2] [INFO ] 2024-05-12 19:57:25 [main] [LogbackApplication:660] - The following 1 profile is active: "prod"
+[REQUEST2] [INFO ] 2024-05-12 19:57:25 [main] [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+[REQUEST2] [INFO ] 2024-05-12 19:57:25 [main] [StandardService:173] - Starting service [Tomcat]
+[REQUEST2] [INFO ] 2024-05-12 19:57:25 [main] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.20]
+[REQUEST2] [INFO ] 2024-05-12 19:57:26 [main] [[/]:173] - Initializing Spring embedded WebApplicationContext
+[REQUEST2] [INFO ] 2024-05-12 19:57:26 [main] [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 500 ms
+[REQUEST2] [INFO ] 2024-05-12 19:57:26 [main] [TomcatWebServer:241] - Tomcat started on port 8080 (http) with context path ''
+[REQUEST2] [INFO ] 2024-05-12 19:57:26 [main] [LogbackApplication:56] - Started LogbackApplication in 1.059 seconds (process running for 1.37)
+[REQUEST2] [INFO ] 2024-05-12 19:57:28 [http-nio-8080-exec-1] [[/]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[REQUEST2] [INFO ] 2024-05-12 19:57:28 [http-nio-8080-exec-1] [DispatcherServlet:532] - Initializing Servlet 'dispatcherServlet'
+[REQUEST2] [INFO ] 2024-05-12 19:57:28 [http-nio-8080-exec-1] [DispatcherServlet:554] - Completed initialization in 1 ms
+#logback.classic pattern: [REQUEST2] [%-5level] %d{yyyy-MM-dd HH:mm:ss} [%thread] [%logger{0}:%line] - %msg%n

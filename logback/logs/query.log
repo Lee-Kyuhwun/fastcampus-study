@@ -1,3 +1,12 @@
 #logback.classic pattern: [%-5level] %d{yyyy-MM-dd HH:mm:ss} [%thread] [%logger{0}:%line] - %msg%n
 #logback.classic pattern: [%-5level] %d{yyyy-MM-dd HH:mm:ss} [%thread] [%logger{0}:%line] - %msg%n
 #logback.classic pattern: [%-5level] %d{yyyy-MM-dd HH:mm:ss} [%thread] [%logger{0}:%line] - %msg%n
+#logback.classic pattern: [%-5level] %d{yyyy-MM-dd HH:mm:ss} [%thread] [%logger{0}:%line] - %msg%n
+[INFO ] 2024-05-12 19:57:28 [http-nio-8080-exec-1] [SQL_LOG1:18] - This is an INFO message
+[WARN ] 2024-05-12 19:57:28 [http-nio-8080-exec-1] [SQL_LOG1:19] - This is a WARN message
+[ERROR] 2024-05-12 19:57:28 [http-nio-8080-exec-1] [SQL_LOG1:20] - This is an ERROR message
+
+#logback.classic pattern: [%-5level] %d{yyyy-MM-dd HH:mm:ss} [%thread] [%logger{0}:%line] - %msg%n
+[INFO ] 2024-05-12 19:59:56 [http-nio-8080-exec-1] [SQL_LOG2:20] - This is an INFO message
+[WARN ] 2024-05-12 19:59:56 [http-nio-8080-exec-1] [SQL_LOG2:21] - This is a WARN message
+[ERROR] 2024-05-12 19:59:56 [http-nio-8080-exec-1] [SQL_LOG2:22] - This is an ERROR message

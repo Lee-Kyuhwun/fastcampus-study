@@ -43,3 +43,29 @@
 [MDC] dev
 [MDC] dev
 [MDC] dev
+#logback.classic pattern: [MDC] %X{job}%n
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+#logback.classic pattern: [MDC] %X{job}%n
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
+[MDC] 
