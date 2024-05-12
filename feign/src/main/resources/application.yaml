@@ -1,0 +1,13 @@
+feign:
+  url:
+    prefix: http://localhost:8080/target_server #DemoFeignClient?? ??? url prefix ?
+  client:
+    config:
+      default:
+        connect-timeout: 5000
+        read-timeout: 5000
+        logger-level: NONE
+      demo-client: # DemoFeignClient?? ??? ??
+        connect-timeout: 10000
+        read-timeout: 10000
+        logger-level: HEADERS # ??? ??? ?? FeignCustomLogger -> Logger.Level logLevel ??? ??? ??/?? ??? ??
