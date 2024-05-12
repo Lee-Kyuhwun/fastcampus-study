@@ -21,4 +21,10 @@ public class DemoController {
     public String postController() {
         return demoService.post();
     }
+
+    @GetMapping("/post")
+    public String postController1() {
+        return demoService.post();
+    }
+
 }

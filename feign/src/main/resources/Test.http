@@ -24,7 +24,10 @@ GET http://localhost:8080/get
 <> 2024-05-12T133725.500.json
 
 ###
-GET http://localhost:8080/target_server/get
+POST http://localhost:8080/target_server/post
 
 <> 2024-05-12T133958.400.json
 <> 2024-05-12T133947.400.json
+
+###
+POST http://localhost:8080/get
