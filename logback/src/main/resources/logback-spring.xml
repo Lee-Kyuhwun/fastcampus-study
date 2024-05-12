@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="logback-spring-${spring.profiles.active}.xml" />
+    <springProperty scope="context" name="LOG_FILE" source="logging.file" />
+    <springProperty scope="context" name="LOG_PATH" source="logging.path" />
+    <springProperty scope="context" name="LOG_LEVEL_PATTERN" source="logging.level.pattern" />
+    <springProperty scope="context" name="LOG_LEVEL" source="logging.level.root" />
+    <springProperty scope="context" name="LOG_PATTERN" source="logging.pattern.console" />
+    <springProperty scope="context" name="LOG_PATTERN_FILE" source="logging.pattern.file" />
+    <springProperty scope="context" name="LOG_EXCEPTION_CONVERSION_WORD" source="logging.exception-conversion-word" />
+    <springProperty scope="context" name="LOG_MAX_HISTORY" source="logging.max-history" />
+    <springProperty scope="context" name="LOG_TOTAL_SIZE_CAP" source="logging.total-size-cap" />
+    <springProperty scope="context" name="LOG_MAX_FILE_SIZE" source="logging.max-file-size" />
+    <springProperty scope="context" name="LOG_MAX_BACKUP_INDEX" source="logging.max-backup-index" />
+    <springProperty scope="context" name="LOG_CONSOLE_APPENDER" source="logging.console-appender" />
+    <springProperty scope="context" name="LOG_FILE_APPENDER" source="logging.file-appender" />
+    <springProperty scope="context" name="LOG_PATTERN_LEVEL" source="logging.pattern.level" />
+    <springProperty scope="context" name="LOG_PATTERN_DATE" source="logging.pattern.date" />
+    <springProperty scope="context" name="LOG_PATTERN_THREAD" source="logging.pattern.thread" />
+    <springProperty scope="context" name="LOG_PATTERN_LOGGER" source="logging.pattern.logger" />
+    <springProperty scope="context" name="LOG_PATTERN_MESSAGE" source="logging.pattern.message" />
+    <springProperty scope="context" name="LOG_PATTERN_NEWLINE" source="logging.pattern.newline" />
+    <springProperty scope="context" name="LOG_PATTERN_EXCEPTION" source="logging.pattern.exception" />
+    <springProperty scope="context" name="LOG_PATTERN_CONVERSION_WORD" source="logging.pattern.conversion-word" />
+    <springProperty scope="context" name="LOG_PATTERN_DATEFORMAT" source="logging.pattern.dateformat" />
+
+</configuration>
