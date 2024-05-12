@@ -2,6 +2,8 @@ package dev.be.feign.controller;
 
 
 import dev.be.feign.feign.common.dto.BaseResponseInfo;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -28,5 +30,10 @@ public class TargetController {
                 .name(baseResponseInfo.getName() + "from target server")
                 .age(baseResponseInfo.getAge())
                 .build();
+    }
+
+    @GetMapping("/error")
+    public ResponseEntity<Object> errorDecoder() {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }

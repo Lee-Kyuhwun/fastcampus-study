@@ -25,4 +25,7 @@ public interface DemoFeignClient { // feign은 선언형이므로 인터페이�
     ResponseEntity<BaseResponseInfo> callPost(@RequestHeader("CustomHeaderName") String customHeader,
                                               @RequestBody BaseRequesetInfo baseRequesetInfo);
 
+    @GetMapping("/error") // prefix + /get
+    ResponseEntity<BaseResponseInfo> callErrorDecoder();
+
 }

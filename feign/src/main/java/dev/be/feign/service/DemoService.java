@@ -38,4 +38,10 @@ public class DemoService{
 
         return "Hello from service";
     }
+
+
+    public String errorDecoder() {
+        demoFeignClient.callErrorDecoder();
+        return "error";
+    }
 }
