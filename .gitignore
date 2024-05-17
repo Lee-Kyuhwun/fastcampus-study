@@ -191,3 +191,47 @@ out/
 .gradle
 .idea
 build/
+# IntelliJ IDEA
+.idea/
+**/.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Gradle
+.gradle/
+**/build/
+**/.gradle/
+
+# General
+**/.idea/
+**/.gradle/
+
+# Ignore IntelliJ IDEA and Gradle specific files and directories
+**/.idea/
+**/.gradle/
+**/build/
+*.iml
+
+# Additional common ignores
+.gradle
+.idea
+build/
+
+# IntelliJ IDEA
+.idea/
+**/.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Gradle
+.gradle/
+**/build/
+**/.gradle/
+
+# General
+**/.idea/
+**/.gradle/
