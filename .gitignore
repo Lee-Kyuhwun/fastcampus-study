@@ -218,7 +218,7 @@ out/
 .gradle
 .idea
 build/
-
+**/.idea/**/misc.xml
 # IntelliJ IDEA
 .idea/
 **/.idea/
@@ -235,3 +235,6 @@ out/
 # General
 **/.idea/
 **/.gradle/
+
+oop-pratice/
+!oop-pratice/

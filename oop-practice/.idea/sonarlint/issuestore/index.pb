@@ -11,3 +11,11 @@ S
 0src/main/java/org/example/PasswordValidator.java,0\5\05e5843a87cd07d3893f4af8ec0e056d67b292b4
 d
 4src/test/java/org/example/PasswordValidatorTest.java,e\2\e229c38ec0217ea690e86b4b838ef3f53e584bc6
+:
+
+.gitingore,a\5\a5668158e74dbf84f25a97b1563f0d337e651d4b
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
