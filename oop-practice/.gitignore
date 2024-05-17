@@ -3,7 +3,8 @@
 .idea/
 
 # Specific folders to ignore within any subdirectory
-**/.idea/
+.idea/**
+.idea/sonarlint/
 **/.gradle/
 
 # Gradle build directories
