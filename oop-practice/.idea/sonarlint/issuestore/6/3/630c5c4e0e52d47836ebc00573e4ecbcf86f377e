@@ -1,4 +1,7 @@
 
-R
-java:S2440"7Remove this instantiation of "RandomPasswordGenerator".(Á”Ç’ûÿÿÿÿ
-V	java:S125"<This block of commented-out lines of code should be removed.(ì†¹…ûÿÿÿÿ
+“
+java:S1854"KRemove this useless assignment to local variable "randomPasswordGenerator".(Á”Ç’ûÿÿÿÿ8æœÌÐø1J$b55d8233-8b3f-465a-802b-ac99d0fde21a
+r	java:S106"+Replace this use of System.out by a logger.(‚¾¾ïþÿÿÿÿ8€Îø1J$8d8ef8ac-574e-4c68-bbd3-1ee5954d04a1
+r	java:S106"+Replace this use of System.out by a logger.(ªæŠ£ûÿÿÿÿ8éÅŽÎø1J$08b5182a-f611-4c65-a24c-921c2142c6bb
+„
+java:S1481"<Remove this unused "randomPasswordGenerator" local variable.(Á”Ç’ûÿÿÿÿ8éœÌÐø1J$fa8f9f98-11c0-47c2-bdba-2d1f41f5d734

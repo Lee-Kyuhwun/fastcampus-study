@@ -19,3 +19,11 @@ d
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+W
+'src/test/java/org/example/UserTest.java,1\8\18b71aed2296467efa57abf2f9f2b7243a2135c3
+`
+0src/main/java/org/example/PasswordGenerator.java,7\4\749a3159c5b7cdaeacc3d2ecf7d09e0ec1d5970e
+l
+<src/test/java/org/example/CorrectFixedPasswordGenerator.java,3\a\3a1f663888bab45db9d266e343314101052670ce
+j
+:src/test/java/org/example/WrongFixedPasswordGenerator.java,3\5\35393b8351f5bb349b938bc12b2a1841cbe78e94
