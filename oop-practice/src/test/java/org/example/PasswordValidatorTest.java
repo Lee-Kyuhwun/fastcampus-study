@@ -13,16 +13,16 @@ public class PasswordValidatorTest {
     @Test
     void validatePasswordTest(){
         assertThatCode(()->PasswordValidator.validate("serverwizard"))
-                .doesNotThrowAnyException();
+                .doesNotThrowAnyException(); // 예외가 발생하지 않는다.
     }
 
 
     @DisplayName("비밀번호가 8자 미만 12자 초과하는 경우 IllegalArgumentException 에러가 발생한다.")
-    @ParameterizedTest
+    @ParameterizedTest // 여러개의 인자를 받아서 테스트를 수행한다.
     @ValueSource(strings = {"aabbcce","aabbccddeeffg"}) // 경계값에 대한 테스트가 있어야한다.
     void validatePasswordTest2(String password){
         assertThatCode(()->PasswordValidator.validate(password))
-                .isInstanceOf(IllegalArgumentException.class)
+                .isInstanceOf(IllegalArgumentException.class) // IllegalArgumentException이 발생한다.
                 .hasMessage("비밀번호는 최소 8자 이상 12자 이하여야 한다.");
     }
 }
