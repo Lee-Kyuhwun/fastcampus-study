@@ -1,6 +1,7 @@
 package dev.be.demo5;
 
-public class c {
+public class f {
+
     public static void main(String[] args) {
 
     }
