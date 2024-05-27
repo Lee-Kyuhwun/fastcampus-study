@@ -12,6 +12,7 @@ public class Demo5Application {
         System.out.println("args");
         System.out.println(" ");
         System.out.println("dfdf");
+        System.out.println("d");
         SpringApplication.run(Demo5Application.class, args);
      }
 
