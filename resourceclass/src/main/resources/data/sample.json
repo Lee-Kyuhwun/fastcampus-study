@@ -1,0 +1,10 @@
+{
+  "name" : "test",
+  "age" : 20,
+  "address" : "test",
+  "phoneNumber" : "1234567890",
+  "test": {
+    "test1": "test1",
+    "test2": "test2"
+  }
+}
