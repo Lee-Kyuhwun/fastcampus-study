@@ -32,4 +32,35 @@ public abstract class AbstactEvent implements Event{
         this.deletedYn = false;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public ZonedDateTime getStartAt() {
+        return startAt;
+    }
+
+    public ZonedDateTime getEndAt() {
+        return endAt;
+    }
+
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public boolean isDeletedYn() {
+        return deletedYn;
+    }
+
+    public ZonedDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public ZonedDateTime getModifiedAt() {
+        return modifiedAt;
+    }
 }
