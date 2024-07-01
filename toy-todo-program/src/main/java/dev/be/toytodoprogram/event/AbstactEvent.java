@@ -1,5 +1,7 @@
 package dev.be.toytodoprogram.event;
 
+import dev.be.toytodoprogram.InValidEventException;
+
 import java.time.Duration;
 import java.time.ZonedDateTime;
 
@@ -20,6 +22,12 @@ public abstract class AbstactEvent implements Event{
     private ZonedDateTime modifiedAt;
 
     protected AbstactEvent(int id, String title, ZonedDateTime startAt, ZonedDateTime endAt) {
+
+
+        if(startAt.isAfter(endAt)){
+            throw new InValidEventException("시작 시간이 현재 시간보다 이전이어야 합니다.");
+        }
+
         this.id = id;
         this.title = title;
         this.startAt = startAt;

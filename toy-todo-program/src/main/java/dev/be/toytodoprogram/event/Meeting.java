@@ -34,6 +34,11 @@ public class Meeting extends AbstactEvent {
         System.out.printf("회의 : %s :%s\n", getTitle(),this.agenda);
     }
 
+    @Override
+    public boolean supports(EventType eventType) {
+        return eventType == EventType.MEETING;
+    }
+
     public void meetingMethod() {
         System.out.println("Meeting.meetingMethod");
     }

@@ -11,4 +11,9 @@ public class NoDisturbance extends AbstactEvent{
     public void print() {
 
     }
+
+    @Override
+    public boolean supports(EventType eventType) {
+        return eventType == EventType.NO_DISTURBANCE;
+    }
 }

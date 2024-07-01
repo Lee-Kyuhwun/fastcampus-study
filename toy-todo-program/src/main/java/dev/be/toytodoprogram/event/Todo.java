@@ -14,4 +14,9 @@ public class Todo extends AbstactEvent{
     public void print() {
         System.out.printf("할일 : %s :%s\n", getTitle(),this.description);
     }
+
+    @Override
+    public boolean supports(EventType eventType) {
+        return eventType == EventType.TO_DO;
+    }
 }

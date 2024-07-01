@@ -11,4 +11,9 @@ public class OutofOffice extends AbstactEvent{
     public void print() {
 
     }
+
+    @Override
+    public boolean supports(EventType eventType) {
+        return eventType == EventType.OUT_OF_OFFICE;
+    }
 }
