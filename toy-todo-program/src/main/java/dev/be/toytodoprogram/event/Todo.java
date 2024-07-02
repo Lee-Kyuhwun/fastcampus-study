@@ -1,5 +1,7 @@
 package dev.be.toytodoprogram.event;
 
+import dev.be.toytodoprogram.update.AbstractAuditableEvent;
+
 import java.time.ZonedDateTime;
 
 public class Todo extends AbstactEvent{
@@ -18,5 +20,10 @@ public class Todo extends AbstactEvent{
     @Override
     public boolean supports(EventType eventType) {
         return eventType == EventType.TO_DO;
+    }
+
+    @Override
+    protected void update1(AbstractAuditableEvent event) {
+
     }
 }

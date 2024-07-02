@@ -1,5 +1,8 @@
 package dev.be.toytodoprogram.event;
 
+import dev.be.toytodoprogram.update.AbstractAuditableEvent;
+import dev.be.toytodoprogram.update.UpdateMeeting;
+
 import java.time.ZonedDateTime;
 import java.util.Set;
 
@@ -41,5 +44,14 @@ public class Meeting extends AbstactEvent {
 
     public void meetingMethod() {
         System.out.println("Meeting.meetingMethod");
+    }
+
+    @Override
+    protected void update1(AbstractAuditableEvent event) {
+        UpdateMeeting meeting = (UpdateMeeting) event;
+        this.participants = meeting.getParticipants();
+        this.meetingRoom = meeting.getMeetingRoom();
+        this.agenda = meeting.getAgenda();
+
     }
 }

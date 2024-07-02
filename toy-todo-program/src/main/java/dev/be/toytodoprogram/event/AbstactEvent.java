@@ -1,6 +1,7 @@
 package dev.be.toytodoprogram.event;
 
 import dev.be.toytodoprogram.InValidEventException;
+import dev.be.toytodoprogram.update.AbstractAuditableEvent;
 
 import java.time.Duration;
 import java.time.ZonedDateTime;
@@ -71,4 +72,29 @@ public abstract class AbstactEvent implements Event{
     public ZonedDateTime getModifiedAt() {
         return modifiedAt;
     }
+
+
+    public void validateAndUpdate(AbstractAuditableEvent event){
+        if(deletedYn== true){
+            throw new InValidEventException("이미 삭제된 이벤트입니다.");
+        }
+
+        defaultUpdate(event);
+        update1(event);
+    }
+
+    public void delete(boolean deletedYn){
+        this.deletedYn = deletedYn;
+    }
+
+    private void defaultUpdate(AbstractAuditableEvent event){
+
+        this.title = event.getTitle();
+        this.startAt = event.getStartAt();
+        this.endAt = event.getEndAt();
+        this.duration = Duration.between(startAt, endAt);
+    }
+
+    protected abstract void update1(AbstractAuditableEvent event);
+
 }
