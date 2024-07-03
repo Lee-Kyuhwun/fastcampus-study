@@ -32,6 +32,9 @@ class EventcsvReaderTest {
 
 
 
+
+
+
         reader.read("src/test/resources/event.csv");
         assertEquals(2, reader.getEvents().size());
     }
