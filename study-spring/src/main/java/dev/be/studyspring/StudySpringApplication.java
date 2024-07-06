@@ -1,18 +1,13 @@
-package dev.be.onlinecoffeeorder;
+package dev.be.studyspring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OnlineCoffeeOrderApplication {
+public class StudySpringApplication {
 
     public static void main(String[] args) {
-
-
-
-
-
-        SpringApplication.run(OnlineCoffeeOrderApplication.class, args);
+        SpringApplication.run(StudySpringApplication.class, args);
     }
 
 }
