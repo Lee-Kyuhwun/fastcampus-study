@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: crash
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:15432/crash
+    username: master
+    password: 1234
