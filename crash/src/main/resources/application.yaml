@@ -1,6 +1,16 @@
 spring:
   application:
     name: crash
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+      format_sql: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:15432/crash
