@@ -12,7 +12,11 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "\"user\"") // user라는 테이블이 이미 존재하기 때문에 쌍따옴표를 추가하여 생성할 수 있도록 함
+@Table(name = "\"user\"",
+indexes = {
+        @Index(name = "user_usename_index", columnList = "username",unique = true)
+}
+) // user라는 테이블이 이미 존재하기 때문에 쌍따옴표를 추가하여 생성할 수 있도록 함
 @Getter
 @Setter
 @ToString
