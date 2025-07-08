@@ -5,8 +5,7 @@ import org.springframework.http.HttpStatus;
 
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY) // null 값은 출력하지 않음
-public record ClientErrorResponse(HttpStatus status, Object message)
-{
+public record ErrorResponse(HttpStatus status, Object message) {
 
 
 }
