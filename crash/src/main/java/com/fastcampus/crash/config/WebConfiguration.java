@@ -4,6 +4,7 @@ package com.fastcampus.crash.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -40,7 +41,9 @@ public class WebConfiguration {
 
         httpSecurity.cors(Customizer.withDefaults())
                 .authorizeHttpRequests(
-                        (requets)->requets.anyRequest().permitAll()
+                        (requets)->requets.
+                                requestMatchers(HttpMethod.POST, "/api/*/users", "/api/*/users/authenticate").permitAll()
+                                .anyRequest().authenticated()
                 )
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf((csrf) -> csrf.disable())
