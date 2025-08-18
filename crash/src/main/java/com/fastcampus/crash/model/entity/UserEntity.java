@@ -3,12 +3,13 @@ package com.fastcampus.crash.model.entity;
 import com.fastcampus.crash.model.user.Role;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.proxy.HibernateProxy;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.ZonedDateTime;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -70,9 +71,21 @@ public class UserEntity implements UserDetails
     }
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public Collection<? extends GrantedAuthority> getAuthorities() 
+{
+
+    if(this.role.equals(Role.ADMIN)){
+        return List.of(
+        new SimpleGrantedAuthority(Role.ADMIN.name()),
+        new SimpleGrantedAuthority(Role.USER.name()),
+        new SimpleGrantedAuthority("ROLE_" + Role.ADMIN.name()),
+        new SimpleGrantedAuthority("ROLE_" + Role.USER.name()))
+        ;
     }
+    return List.of(new SimpleGrantedAuthority(Role.USER.name()),
+            new SimpleGrantedAuthority("ROLE_" + Role.USER.name()));
+}
+    
 
     @Override
     public String getPassword() {
