@@ -1,13 +1,12 @@
 package com.fastcampus.crash.service;
 
 
-import com.fastcampus.crash.error.user.UserAlreadyException;
 import com.fastcampus.crash.error.user.UserNotFoundException;
 import com.fastcampus.crash.model.entity.UserEntity;
 import com.fastcampus.crash.model.user.User;
 import com.fastcampus.crash.model.user.UserAuthenticationResponse;
 import com.fastcampus.crash.model.user.UserLoginRequestBody;
-import com.fastcampus.crash.model.user.UserSignUpPostRequestBody;
+import com.fastcampus.crash.model.user.UserSignUpRequestBody;
 import com.fastcampus.crash.repository.UserEntityRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +15,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class UserService  implements UserDetailsService {
@@ -37,7 +34,7 @@ public class UserService  implements UserDetailsService {
     }
 
 
-    public User signUp(UserSignUpPostRequestBody user) {
+    public User signUp(UserSignUpRequestBody user) {
 
         getUserEntityRepositoryByUsername(user.username());
 

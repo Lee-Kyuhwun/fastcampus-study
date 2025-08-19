@@ -4,7 +4,7 @@ package com.fastcampus.crash.controller;
 import com.fastcampus.crash.model.user.User;
 import com.fastcampus.crash.model.user.UserAuthenticationResponse;
 import com.fastcampus.crash.model.user.UserLoginRequestBody;
-import com.fastcampus.crash.model.user.UserSignUpPostRequestBody;
+import com.fastcampus.crash.model.user.UserSignUpRequestBody;
 import com.fastcampus.crash.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +21,8 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> signUp(
-            @Valid @RequestBody UserSignUpPostRequestBody userSignUpPostRequestBody) {
-        var user = userService.signUp(userSignUpPostRequestBody);
+            @Valid @RequestBody UserSignUpRequestBody userSignUpRequestBody) {
+        var user = userService.signUp(userSignUpRequestBody);
         return ResponseEntity.ok(user);
     }
 
