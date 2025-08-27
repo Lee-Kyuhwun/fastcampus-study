@@ -5,14 +5,20 @@ import com.fastcampus.crash.exception.crashsession.CrashSessionNotFoundException
 import com.fastcampus.crash.model.crashsession.CrashSession;
 import com.fastcampus.crash.model.crashsession.CrashSessionPatchRequestBody;
 import com.fastcampus.crash.model.crashsession.CrashSessionPostRequestBody;
+import com.fastcampus.crash.model.crashsession.CrashSessionRegistrationStatus;
 import com.fastcampus.crash.model.entity.CrashSessionEntity;
+import com.fastcampus.crash.model.entity.RegistrationEntity;
 import com.fastcampus.crash.model.entity.SessionSpeakerEntity;
+import com.fastcampus.crash.model.entity.UserEntity;
 import com.fastcampus.crash.repository.CrashSessionEntityRepository;
+import com.fastcampus.crash.repository.RegistrationEntityRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +26,7 @@ public class CrashSessionService {
 
     private final CrashSessionEntityRepository crashSessionEntityRepository;
     private final SessionSpeakerService sessionSpeakerService;
+    private final RegistrationEntityRepository registrationEntityRepository;
 
     public List<CrashSession> getCrashSessions() {
         var crashSessionEntities = crashSessionEntityRepository.findAll();
@@ -86,11 +93,22 @@ public class CrashSessionService {
         crashSessionEntityRepository.delete(crashSessionEntity);
     }
 
-    private CrashSessionEntity getCrashSessionEntityBySessionId(Long sessionId) {
+    public CrashSessionEntity getCrashSessionEntityBySessionId(Long sessionId) {
         return crashSessionEntityRepository.findById(sessionId)
                 .orElseThrow(
                         () -> new CrashSessionNotFoundException(sessionId)
                 );
     }
 
+    public CrashSessionRegistrationStatus getCrashSessionRegistrationStatusBySessionId(Long sessionId, UserEntity currentUser) {
+        CrashSessionEntity crashSessionEntity = getCrashSessionEntityBySessionId(sessionId);
+        Optional<RegistrationEntity> registrationEntity = registrationEntityRepository.findByUserAndSession(currentUser, crashSessionEntity);
+
+        return new CrashSessionRegistrationStatus(
+                crashSessionEntity.getSessionId(),
+                registrationEntity.isPresent(),
+                registrationEntity.map(RegistrationEntity :: getRegistrationId).orElse(null)
+        );
+
+    }
 }

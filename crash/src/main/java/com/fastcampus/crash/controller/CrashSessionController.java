@@ -3,10 +3,13 @@ package com.fastcampus.crash.controller;
 import com.fastcampus.crash.model.crashsession.CrashSession;
 import com.fastcampus.crash.model.crashsession.CrashSessionPatchRequestBody;
 import com.fastcampus.crash.model.crashsession.CrashSessionPostRequestBody;
+import com.fastcampus.crash.model.crashsession.CrashSessionRegistrationStatus;
+import com.fastcampus.crash.model.entity.UserEntity;
 import com.fastcampus.crash.service.CrashSessionService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +29,13 @@ public class CrashSessionController {
     @GetMapping("/{sessionId}")
     public ResponseEntity<CrashSession> getCrashSessionBySessionId(@PathVariable Long sessionId) {
         var crashSession = crashSessionService.getCrashSessionBySessionId(sessionId);
+        return ResponseEntity.ok(crashSession);
+    }
+
+    @GetMapping("/{sessionId}/registration-status")
+    public ResponseEntity<CrashSessionRegistrationStatus> getCrashSessionRegistrationStatusBySessionId(@PathVariable Long sessionId
+    , Authentication authentication) {
+        var crashSession = crashSessionService.getCrashSessionRegistrationStatusBySessionId(sessionId,(UserEntity) authentication);
         return ResponseEntity.ok(crashSession);
     }
 

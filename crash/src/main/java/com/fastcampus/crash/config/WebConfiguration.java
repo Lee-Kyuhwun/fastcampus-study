@@ -45,8 +45,13 @@ public class WebConfiguration {
                 .authorizeHttpRequests(
                         (requests) -> requests
                                 .requestMatchers(HttpMethod.POST, "/api/*/users", "/api/*/users/authenticate").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/api/*/session-speakers", "/api/*/session-speakers/**").permitAll()
-                                .requestMatchers( "/api/*/session-speakers", "/api/*/session-speakers/**").hasAnyAuthority(Role.ADMIN.name())
+                                .requestMatchers(HttpMethod.GET, "/api/*/session-speakers", "/api/*/session-speakers/**",
+                                        "/api/*/crash-sessions",
+                                        "/api/*/crash-sessions/**"
+                                        ).permitAll()
+                                .requestMatchers( "/api/*/session-speakers", "/api/*/session-speakers/**",
+                                        "/api/*/crash-sessions",
+                                        "/api/*/crash-sessions/**").hasAnyAuthority(Role.ADMIN.name())
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

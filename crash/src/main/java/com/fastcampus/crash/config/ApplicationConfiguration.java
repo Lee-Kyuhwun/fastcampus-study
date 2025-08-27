@@ -41,7 +41,7 @@ public class ApplicationConfiguration {
                 // TODO: 유저 및 세선 스피커 생성
                 createTestUser();
                 createTestSessionSpeakers(10);
-                create
+
             }
         };
     }
@@ -66,8 +66,18 @@ public class ApplicationConfiguration {
                 // SessionSpeaker 객체를 생성
                 0,numberOfSpeakers).mapToObj(i-> createSessionSpeaker()).toList();// 세션 스피커 생성
         // toList()는 스트림을 리스트로 변환
-        // toList없으면
+        // toList없으면 그냥 스트림 상태
 
+        sessionSpeakers.forEach(
+                sessionSpeaker -> {
+                    // 각 세션 스피커에 대해 createTestCrashSessions 메서드를 호출하여
+                    // 테스트 크래시 세션을 생성
+                    int numberOfSessions = new Random().nextInt(4)+1;
+                    IntStream.range(0,numberOfSessions)
+                                    .forEach(i->
+                                            createTestCrashSessions(sessionSpeaker));
+                }
+        );
     }
     private SessionSpeaker createSessionSpeaker() {
         var name = faker.name().fullName();
