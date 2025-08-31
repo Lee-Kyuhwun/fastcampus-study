@@ -25,6 +25,9 @@ public class RegistrationService {
     @Autowired
     private CrashSessionService crashSessionService;
 
+    @Autowired
+    private SlackService slackService;
+
     public List<Registration> getRegistrationsByCurrentUser(UserEntity currentUser) {
 
         List<RegistrationEntity> registrationEntities = registrationEntityRepository.findByUser(currentUser);
@@ -51,7 +54,12 @@ public class RegistrationService {
                     throw new RegistrationAlreadyExistsException(registrationPostRequestBody.sessionId(), currentUser);
                 });
         RegistrationEntity registrationEntity = RegistrationEntity.of(currentUser, crashSessionBySessionId);
-        return Registration.from(registrationEntityRepository.save(registrationEntity));
+
+        var save = registrationEntityRepository.save(registrationEntity);
+
+        Registration registration = Registration.from(registrationEntity);
+        slackService.sendSlackNotification(registration);
+        return registration;
     }
 
     public void deleteRegistrationByRegistrationIdAndCurrentUser(Long registrationId, UserEntity principal) {
