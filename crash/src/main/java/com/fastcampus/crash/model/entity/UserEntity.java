@@ -1,6 +1,7 @@
 package com.fastcampus.crash.model.entity;
 
 import com.fastcampus.crash.model.user.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -51,21 +52,25 @@ public class UserEntity implements UserDetails
 
 
     @Override
+    @JsonIgnore
     public boolean isAccountNonExpired() { // 정상인지 그런거 확인
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isEnabled() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isAccountNonLocked() {
         return true;
     }

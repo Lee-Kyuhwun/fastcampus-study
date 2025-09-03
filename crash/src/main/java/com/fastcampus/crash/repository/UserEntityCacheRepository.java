@@ -5,6 +5,7 @@ import com.fastcampus.crash.model.entity.UserEntity;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.time.Duration;
 import java.util.Optional;
 
 @Repository
@@ -15,7 +16,7 @@ public class UserEntityCacheRepository {
     public void setUserEntityCache(UserEntity userEntity){
         String redisKey = getRedisKey(userEntity.getUsername());
 
-        userEntityRedisTemplate.opsForValue().set(redisKey, userEntity);
+        userEntityRedisTemplate.opsForValue().set(redisKey, userEntity, Duration.ofSeconds(30));
     }
     
     public Optional<UserEntity> getUserEntityCache(String userName){
