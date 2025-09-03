@@ -7,6 +7,7 @@ import com.fastcampus.crash.model.user.User;
 import com.fastcampus.crash.model.user.UserAuthenticationResponse;
 import com.fastcampus.crash.model.user.UserLoginRequestBody;
 import com.fastcampus.crash.model.user.UserSignUpRequestBody;
+import com.fastcampus.crash.repository.UserEntityCacheRepository;
 import com.fastcampus.crash.repository.UserEntityRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserService  implements UserDetailsService {
@@ -26,6 +29,9 @@ public class UserService  implements UserDetailsService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
     private JwtService jwtService;
+
+    @Autowired
+    private UserEntityCacheRepository userEntityCacheRepository;
 
     // username으로 사용자를 찾는 메소드
     @Override
@@ -70,7 +76,16 @@ public class UserService  implements UserDetailsService {
     }
 
     private UserEntity getUserEntityRepositoryByUsername(String userLoginRequestBody) {
-        return userEntityRepository.findByUsername(userLoginRequestBody).orElseThrow(
-                () -> new UsernameNotFoundException("User not found with username: " + userLoginRequestBody));
+        return userEntityCacheRepository
+                .getUserEntityCache(userLoginRequestBody)
+                .orElseGet(
+                        () -> {
+
+                            var userEntity = userEntityRepository.findByUsername(userLoginRequestBody)
+                                    .orElseThrow(() -> new UserNotFoundException("User not found with username: " + userLoginRequestBody));
+                            userEntityCacheRepository.setUserEntityCache(userEntity);
+                            return userEntity;
+                        });
     }
+
 }
